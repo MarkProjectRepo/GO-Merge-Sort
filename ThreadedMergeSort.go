@@ -93,13 +93,13 @@ func main() {
 	MergeSort(A,ch)
 
 	meTime := time.Since(timer)
-	fmt.Println("Threaded Time to Sort: ",meTime)
+	defer fmt.Println("Threaded Time to Sort: ",meTime)
 
 	timer = time.Now()
 
 	B = UnThreadedMergeSort(B)
 	stupidGoLangTime := time.Since(timer)
-	fmt.Println("Unthreaded Time to Sort: ",stupidGoLangTime)
+	defer fmt.Println("Unthreaded Time to Sort: ",stupidGoLangTime)
 
 	if meTime < stupidGoLangTime {
 		fmt.Println("Finally I've won!")
